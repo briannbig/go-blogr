@@ -16,7 +16,7 @@ type User struct {
 	ID        uint32    `gorm:"primary_key;auto_increment" json:"id"`
 	UserName  string    `gorm:"size:255;not null;unique" json:"username"`
 	Email     string    `gorm:"size:100;not null;unique" json:"email"`
-	Password  string    `gorm:"size:100;not null;" json:"password"`
+	Password  string    `gorm:"size:100;not null;" json:"-"`
 	CreatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"updated_at"`
 }
@@ -50,44 +50,44 @@ func (u *User) Validate(action string) error {
 	switch strings.ToLower(action) {
 	case "update":
 		if u.UserName == "" {
-			return errors.New("Required username")
+			return errors.New("required Username")
 		}
 		if u.Password == "" {
-			return errors.New("Required password")
+			return errors.New("required password")
 		}
 		if u.Email == "" {
-			return errors.New("Required email!")
+			return errors.New("required email")
 		}
 
 		if err := checkmail.ValidateFormat(u.Email); err != nil {
-			return errors.New("Invalid Email")
+			return errors.New("invalid Email")
 		}
 
 		return nil
 
 	case "login":
 		if u.Password == "" {
-			return errors.New("Required password")
+			return errors.New("required password")
 		}
 		if u.Email == "" {
-			return errors.New("Required email!")
+			return errors.New("required email")
 		}
 		if err := checkmail.ValidateFormat(u.Email); err != nil {
-			return errors.New("Invalid Email")
+			return errors.New("invalid email")
 		}
 		return nil
 	default:
 		if u.UserName == "" {
-			return errors.New("Required username")
+			return errors.New("required username")
 		}
 		if u.Password == "" {
-			return errors.New("Required password")
+			return errors.New("required password")
 		}
 		if u.Email == "" {
-			return errors.New("Required Email")
+			return errors.New("required Email")
 		}
 		if err := checkmail.ValidateFormat(u.Email); err != nil {
-			return errors.New("Invalid Email")
+			return errors.New("invalid Email")
 		}
 		return nil
 	}
