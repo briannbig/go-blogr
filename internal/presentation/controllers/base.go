@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/briannbig/go-blogr/api/models"
+	"github.com/briannbig/go-blogr/internal/domain/models"
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
 

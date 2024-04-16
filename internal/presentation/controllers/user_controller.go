@@ -8,11 +8,10 @@ import (
 
 	"net/http"
 	"strconv"
-
-	"github.com/briannbig/go-blogr/api/auth"
-	"github.com/briannbig/go-blogr/api/models"
-	"github.com/briannbig/go-blogr/api/responses"
-	"github.com/briannbig/go-blogr/api/utils/formaterror"
+	"github.com/briannbig/go-blogr/internal/domain/models"
+	"github.com/briannbig/go-blogr/internal/presentation/auth"
+	"github.com/briannbig/go-blogr/internal/presentation/responses"
+	formaterror "github.com/briannbig/go-blogr/internal/utils"
 	"github.com/gorilla/mux"
 )
 

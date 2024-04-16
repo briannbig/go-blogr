@@ -1,6 +1,6 @@
 package controllers
 
-import "github.com/briannbig/go-blogr/api/middlewares"
+import "github.com/briannbig/go-blogr/internal/presentation/middlewares"
 
 func (s *Server) initializeRoutes() {
 

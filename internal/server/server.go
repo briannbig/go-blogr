@@ -5,8 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/briannbig/go-blogr/api/controllers"
-	"github.com/briannbig/go-blogr/api/seed"
+	"github.com/briannbig/go-blogr/internal/infra/database/seed"
+	"github.com/briannbig/go-blogr/internal/presentation/controllers"
 	"github.com/joho/godotenv"
 )
 

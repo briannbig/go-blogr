@@ -3,7 +3,7 @@ package seed
 import (
 	"log"
 
-	"github.com/briannbig/go-blogr/api/models"
+	"github.com/briannbig/go-blogr/internal/domain/models"
 	"github.com/jinzhu/gorm"
 )
 
