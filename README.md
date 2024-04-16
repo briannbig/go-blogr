@@ -17,7 +17,7 @@ docker run --name blogr_postgres -e POSTGRES_PASSWORD=bl0gr -e POSTGRES_DB=blogr
 3.  Start server
 
     ```shell
-    go run .
+    go run cmd/main.go
     ```
 4. Access the API from your browser at `:8080`
 
